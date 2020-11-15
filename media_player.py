@@ -652,10 +652,10 @@ class PioneerDevice(MediaPlayerEntity):
         elif data[:3] == "VOL" and self._zone == "Main":
             self._volume = int(data[3:6]) / MAX_VOLUME
             _LOGGER.debug("Volume: " + str(round(self._volume*100))+"%")
-        elif (data[:2] == "ZV" and self._zone == "Zone2"):
+        elif (data[:2] == "VOL" and self._zone == "Zone2"):
             self._volume = int(data[2:4]) / MAX_ZONE_VOLUME
             _LOGGER.debug("Volume: " + str(round(self._volume*100))+"%")
-        elif (data[:3] == "HZV" and self._zone == "HDZone"):
+        elif (data[:3] == "VOL" and self._zone == "HDZone"):
             self._volume = int(data[3:5]) / MAX_ZONE_VOLUME
             _LOGGER.debug("Volume: " + str(round(self._volume*100))+"%")
 
